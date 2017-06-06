@@ -1,23 +1,21 @@
 #!groovy
 
-stage 'package'
 node {
-    mvn 'clean package'
-}
-
-stage 'test'
-node {
-    deploy('test')
-    testAlive('')
-}
-
-input '发布到生产环境？'
+    stage('package'){
+        mvn 'clean package'
+    }
     
-stage 'production'
-node {
-    deploy('prod')
-    testAlive('')
+    stage('test'){
+        deploy('test')
+        testAlive('')
+    }
+    
+    stage('production'){
+        deploy('prod')
+        testAlive('')
+    }
 }
+
 
 def mvn(args) {
     sh "${tool 'Maven 3.x'}/bin/mvn ${args}"
