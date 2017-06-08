@@ -5,4 +5,4 @@ Demo project to show pagination usage
 - Thymeleaf
 
 # Screenshot
-![screenshot](https://raw.githubusercontent.com/emac/pagination/master/src/main/resources/static/img/screenshot.png)
+![screenshot](https://raw.githubusercontent.com/atschx/pagination/master/src/main/resources/static/img/screenshot.png)
