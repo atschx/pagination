@@ -20,7 +20,7 @@ mvn -version'''
     
     stage('package'){
         steps{
-          mvn 'clean package'
+          sh 'mvn clean package'
         }
     }
     
@@ -50,3 +50,5 @@ def deploy(env) {
 def testAlive(url) {
     sleep 3
 }
+
+
