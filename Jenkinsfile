@@ -13,21 +13,29 @@ mvn -version'''
       }
     }
     stage('checkout'){
-      git credentialsId: '0fe280b7-d857-4689-b649-0b612417f51e', url: 'https://github.com/atschx/pagination.git'
+      steps{
+        git credentialsId: '0fe280b7-d857-4689-b649-0b612417f51e', url: 'https://github.com/atschx/pagination.git'
+      }
     }
     
     stage('package'){
-      mvn 'clean package'
+        steps{
+          mvn 'clean package'
+        }
     }
     
     stage('test'){
-      deploy('test')
-      testAlive('')
+      steps{
+        deploy('test')
+        testAlive('')
+      }
     }
     
     stage('production'){
-      deploy('prod')
-      testAlive('')
+      steps{
+        deploy('prod')
+        testAlive('')
+      }
     }
   }
 }
