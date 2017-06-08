@@ -1,6 +1,9 @@
 #!groovy
 
 node {
+    stage('CheackOut'){
+        git credentialsId: '0fe280b7-d857-4689-b649-0b612417f51e', url: 'https://github.com/atschx/pagination.git'
+    }
     stage('package'){
         mvn 'clean package'
     }
